@@ -27,14 +27,22 @@
     [_window makeKeyAndVisible];
     
     LeftViewController * left = [[LeftViewController alloc] init];
+    left.title = @"Left";
+    UINavigationController * leftNav = [[UINavigationController alloc] initWithRootViewController:left];
     
     RightViewController * right = [[RightViewController alloc] init];
+    right.title = @"Right";
+    UINavigationController * rightNav = [[UINavigationController alloc] initWithRootViewController:right];
     
     ViewController * root = [[ViewController alloc] init];
     root.title = @"Root";
     UINavigationController * rootNav = [[UINavigationController alloc] initWithRootViewController:root];
     
-    _window.rootViewController = [[RESideMenu alloc] initWithContentViewController:rootNav leftMenuViewController:left rightMenuViewController:right];
+    UITabBarController * tab = [[UITabBarController alloc] init];
+    
+    tab.viewControllers = @[leftNav,rootNav,rightNav];
+    
+    _window.rootViewController = [[RESideMenu alloc] initWithContentViewController:tab leftMenuViewController:left rightMenuViewController:right];
     
     return YES;
     
