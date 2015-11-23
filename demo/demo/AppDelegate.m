@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import "ViewController.h"
+#import "LeftViewController.h"
+#import "RightViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -21,6 +25,16 @@
     _window.backgroundColor = [UIColor whiteColor];
     
     [_window makeKeyAndVisible];
+    
+    LeftViewController * left = [[LeftViewController alloc] init];
+    
+    RightViewController * right = [[RightViewController alloc] init];
+    
+    ViewController * root = [[ViewController alloc] init];
+    root.title = @"Root";
+    UINavigationController * rootNav = [[UINavigationController alloc] initWithRootViewController:root];
+    
+    _window.rootViewController = [[RESideMenu alloc] initWithContentViewController:rootNav leftMenuViewController:left rightMenuViewController:right];
     
     return YES;
     

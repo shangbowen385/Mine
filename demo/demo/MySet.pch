@@ -12,4 +12,9 @@
 #define SWidth [UIScreen mainScreen].bounds.size.width
 #define SHeight [UIScreen mainScreen].bounds.size.height
 
+#import "UIImageView+WebCache.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "MyAFNetWorking.h"
+#import "RESideMenu.h"
+
 #endif /* MySet_pch */
